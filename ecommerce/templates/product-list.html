@@ -1,0 +1,35 @@
+{% load filter_tags %}
+{% load humanize %}
+{%if mymsg1|stringformat:'s' == "No matches found"%}
+<div style="margin-left:500px;position:absolute;"><b><font color="red">No Matches found</font></b></div>
+              {%else%}
+              
+{% for prods in data %}
+    {%for prodddet in getproddet%}
+    {% for pnum,pr in getdetail.items%}
+{%if prods.product_number|stringformat:'s' == prodddet.product_number|stringformat:'s'%}
+{%if prods.product_number|stringformat:'s' == pnum|stringformat:'s'%}
+    <p></p>
+    <div class="col-4"id="pname" >
+        
+      <a href="/singleproduct/{{prods.product_number}}" style="text-decoration:none;">
+        <div class="card-deck" style="margin-top:30px;">
+        <div class="card"  height="400px;">
+    <img class="card-img-top" src="{{prods.product_image.url}}" height="250px" width="100px;">
+    <div class="card-body">
+        <p class="card-text" style="font-size: 14px;color:gray;">Seller: {{prods.soldby}}</p>
+        <h5  class="card-title" style="font-size: 17px;">{{prods.product_name|truncatechars:25}}</h5>
+        <p class="card-text"><b>Price:&#8377; {{pr|intcomma}} <span style="color:grey;"><strike>&#8377;{{prods.product_price|intcomma}}</strike></span> <span style="color:darkgreen;font-size:14px;">{{prodddet.discount}}% off</span></b></p>
+    </div>
+    </div>
+    </div>
+    </a>
+    </div>
+    
+    {%endif%}
+    {%endif%}
+    {%endfor%}
+    {% endfor %} 
+    {% endfor %}
+    {%endif%}
+  

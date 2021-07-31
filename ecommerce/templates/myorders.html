@@ -1,0 +1,740 @@
+{% load static %}
+{% load filter_tags %}
+{% load humanize %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="{% static 'images/fevicon.png' %}" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Minics</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+
+  <!-- fonts style -->
+  <link href="{% static 'https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap' %}" rel="stylesheet"> <!-- range slider -->
+
+  <!-- font awesome style -->
+  <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+
+
+  <script src=  
+  "https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js">  
+      </script>  
+      
+      <script src=  
+  "https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js">  
+      </script>  
+      
+      <link href=  
+  "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css"
+          rel="stylesheet" type="text/css" />  
+
+
+          <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+          
+          <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+
+
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script> 
+
+         
+<style>
+   .dropbtn {
+          background:white;
+          padding: 5px;
+          font-size: 16px;
+          border: none;
+          margin:0;
+          width:213px;
+        }
+        
+        .dropdown {
+          position: relative;
+          display: inline-block;
+        }
+        
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f1f1f1;
+          min-width: 200px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
+        
+        .dropdown-content a {
+          color: black;
+          padding: 10px 12px;
+          text-decoration: none;
+          display: block;
+        }
+        
+        .dropdown-content a:hover {
+          background-color: #ddd;}
+        
+        .dropdown:hover .dropdown-content {display: block;}
+        
+        .dropdown:hover .dropbtn {background-color:#E8E8E8;}
+
+        
+
+      .dropbtn1 {
+        background:transparent;
+        padding: 5px;
+        font-size: 16px;
+        border: none;
+        margin:0;
+        width:auto;
+        color:white;
+        
+      }
+      .dropbtn1:hover {
+      color:#f3c93e
+      }
+      .dropdown1 {
+        position: relative;
+        display: inline-block;
+        width:100px;
+      }
+      
+      .dropdown-content1 {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 180px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        text-align: left !important;
+        
+      }
+      
+      .dropdown-content1 a {
+        color: black;
+        padding: 5px 6px;
+        text-decoration: none;
+        display: block;
+      }
+      
+      .dropdown-content1 a:hover {
+        color:blue;
+      }
+     
+      .dropdown1:hover .dropdown-content1 {display: block;}
+
+
+
+
+      .form-control:focus {
+        box-shadow: none;
+        border-color: #BA68C8
+    }
+    
+    .profile-button {
+        background: rgb(99, 39, 120);
+        box-shadow: none;
+        border: none
+    }
+    
+    .profile-button:hover {
+        background: #682773
+    }
+    
+    .profile-button:focus {
+        background: #682773;
+        box-shadow: none
+    }
+    
+    .profile-button:active {
+        background: #682773;
+        box-shadow: none
+    }
+    
+    .back:hover {
+        color: #682773;
+        cursor: pointer
+    }
+    
+    .labels {
+        font-size: 11px
+    }
+    
+    .add-experience:hover {
+        background: #BA68C8;
+        color: #fff;
+        cursor: pointer;
+        border: solid 1px #BA68C8
+    }
+
+    input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.containerr
+{
+    margin-left:40px;
+    margin-right:40px;
+}
+
+.table-wrapper {
+    background: #fff;
+    padding: 20px 25px;
+    margin: 30px auto;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+
+}
+
+.table-wrapper .btn {
+    float: right;
+    color: #333;
+    background-color: #fff;
+    border-radius: 3px;
+    border: none;
+    outline: none !important;
+    margin-left: 10px;
+}
+.table-wrapper .btn:hover {
+    color: #333;
+    background: #f2f2f2;
+}
+.table-wrapper .btn.btn-primary {
+    color: #fff;
+    background: #03A9F4;
+}
+.table-wrapper .btn.btn-primary:hover {
+    background: #03a3e7;
+}
+.table-title .btn {		
+    font-size: 13px;
+    border: none;
+}
+.table-title .btn i {
+    float: left;
+    font-size: 21px;
+    margin-right: 5px;
+}
+.table-title .btn span {
+    float: left;
+    margin-top: 2px;
+}
+.table-title {
+    color: #fff;
+    background: #4b5366;		
+    padding: 16px 25px;
+    margin: -20px -25px 10px;
+    border-radius: 3px 3px 0 0;
+}
+.table-title h2 {
+    margin: 5px 0 0;
+    font-size: 24px;
+}
+.show-entries select.form-control {        
+    width: 60px;
+    margin: 0 5px;
+}
+.table-filter .filter-group {
+    float: right;
+    margin-left: 15px;
+}
+.table-filter input, .table-filter select {
+    height: 34px;
+    border-radius: 3px;
+    border-color: #ddd;
+    box-shadow: none;
+}
+.table-filter {
+    padding: 5px 0 15px;
+    border-bottom: 1px solid #e9e9e9;
+    margin-bottom: 5px;
+}
+.table-filter .btn {
+    height: 34px;
+}
+.table-filter label {
+    font-weight: normal;
+    margin-left: 10px;
+}
+.table-filter select, .table-filter input {
+    display: inline-block;
+    margin-left: 5px;
+}
+.table-filter input {
+    width: 200px;
+    display: inline-block;
+}
+.filter-group select.form-control {
+    width: 110px;
+}
+.filter-icon {
+    float: right;
+    margin-top: 7px;
+}
+.filter-icon i {
+    font-size: 18px;
+    opacity: 0.7;
+}	
+table.table tr th, table.table tr td {
+    border-color: #e9e9e9;
+    padding: 12px 15px;
+    vertical-align: middle;
+}
+table.table tr th:first-child {
+    width: 60px;
+}
+table.table tr th:last-child {
+    width: 80px;
+}
+table.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #fcfcfc;
+}
+table.table-striped.table-hover tbody tr:hover {
+    background: #f5f5f5;
+}
+table.table th i {
+    font-size: 13px;
+    margin: 0 5px;
+    cursor: pointer;
+}	
+table.table td a {
+    font-weight: bold;
+    color: #566787;
+    display: inline-block;
+    text-decoration: none;
+}
+table.table td a:hover {
+    color: #2196F3;
+}
+table.table td a.view {        
+    width: 30px;
+    height: 30px;
+    color: #2196F3;
+    border: 2px solid;
+    border-radius: 30px;
+    text-align: center;
+}
+table.table td a.view i {
+    font-size: 22px;
+    margin: 2px 0 0 1px;
+}   
+table.table .avatar {
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.status {
+    font-size: 30px;
+    margin: 2px 2px 0 0;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 10px;
+}
+.text-success {
+    color: #10c469;
+}
+.text-info {
+    color: #62c9e8;
+}
+.text-warning {
+    color: #FFC107;
+}
+.text-danger {
+    color: #ff5b5b;
+}
+.pagination {
+    float: right;
+    margin: 0 0 5px;
+}
+.pagination li a {
+    border: none;
+    font-size: 13px;
+    min-width: 30px;
+    min-height: 30px;
+    color: #999;
+    margin: 0 2px;
+    line-height: 30px;
+    border-radius: 2px !important;
+    text-align: center;
+    padding: 0 6px;
+}
+.pagination li a:hover {
+    color: #666;
+}	
+.pagination li.active a {
+    background: #03A9F4;
+}
+.pagination li.active a:hover {        
+    background: #0397d6;
+}
+.pagination li.disabled i {
+    color: #ccc;
+}
+.pagination li i {
+    font-size: 16px;
+    padding-top: 6px
+}
+.hint-text {
+    float: left;
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+
+
+.dropdown-menu
+{
+  margin-top:10px;
+  margin-left:-30px;
+}
+.dropdown-menu li:hover
+{
+  background:dodgerblue;
+  
+}
+
+.badge {
+  font-size: 12px;
+  background: #ff0000;
+  color: #fff;
+  padding: 0 5px;
+  vertical-align: top;
+ 
+}
+
+      </style>
+    
+      </head>
+      
+      <body >
+        <script>
+            var c=1;
+        </script>
+        <div class="hero_area">
+        
+          <!-- header section strats -->
+          <div style="position:fixed;z-index:9999;width:100%;">
+          <header class="header_section" >
+            <div class="header_top" style="background-color:#3a4468;">
+              <div class="container-fluid">
+                <div class="top_nav_container">
+                  <div class="contact_nav">
+                    <a class="navbar-brand" href="/">
+                      <span>
+                        Minics
+                      </span>
+                    </a>
+                   </div>
+                   <form method="POST" action="/search">
+                    <from class="search_form">
+                      
+                        {% csrf_token %}
+                      <input type="text" class="form-control" id="tagss" name="searchtext" placeholder="Search here..." required>
+                      <button class="" type="submit"name="searchbtn">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                      </button>
+                      
+                    </from>
+                  </form>
+                    {% if sessemail%}
+                    <div class="user_option_box">
+                    <div class="dropdown1" >
+                      
+                      <button id="mypro" onmouseout="document.getElementById('mypro').style.color='white';"onmouseover="document.getElementById('mypro').style.color='#f3c93e';"data-toggle="dropdown" class="user-action"class="account-link dropbtn1" style="background:transparent;outline:none;border:0px;color:white;margin-left:-30px;">
+                        <i class="fa fa-user" aria-hidden="true"style="color:#f3c93e;"></i>
+                      <span>
+                        {{fullname|truncatechars:7}} <i class="fa fa-caret-down" aria-hidden="true"></i>
+                      </span>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a href="/myprofile"><font color="black"><i style="color:black;"class="fa fa-user-o"></i> My Profile</font></a></li>
+                      <li><a href="/myorders"><font color="black"><i style="color:black;"class="fa fa-shopping-cart" aria-hidden="true"></i> My Orders</font></a></li>
+                      <li><a href="/mywishlist"><font color="black"><i style="color:black;"class="fa fa-heart" aria-hidden="true"></i> My Wishlist</font></a></li>
+                      <li style="color:black;border-bottom:1px solid lightgrey;"></li>
+                      <li><a href="/logout"><font color="black"><i style="color:black;" class="fa fa-sign-out" aria-hidden="true"></i> Logout</font></a></li>
+                    </ul>
+                    </div>
+                    {%else%}
+                      <div class="user_option_box">
+                      <a href="/register" class="account-link">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <span>
+                          Sign In / Register
+                        </span>
+                      </a>
+                      {% endif %}
+         
+                    <a href="/gotocart" class="cart-link">
+                      <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                      <span>
+                     Cart
+                        {%if cartt == 0%}
+                  {%else%}
+                  <span class="badge">{{cartt}}</span>
+                  {%endif%}
+                      </span>
+                    </a>
+                  </div>
+                </div>
+      
+              </div>
+            </div>
+           
+          </header>
+          
+        </div>
+        <div style="margin-top:25px;"></div>
+          <script>
+            $.noConflict();
+            $( function() {
+              var prodsname = [
+                  {%for rec in records%}
+                      "{{rec.related_to}}",
+                  {%endfor%}
+                  {%for rec1 in records1%}
+                "{{rec1.product_name}}",
+              
+            {%endfor%}
+            {%for rec2 in records2%}
+                "{{rec2.brand}}",
+              
+            {%endfor%}
+              ];
+           
+              $( "#tagss" ).autocomplete({
+                source: prodsname
+             
+              });
+              
+            } );
+            </script>
+
+
+
+            <div class="containerr">
+                <div class="table-wrapper">
+                  
+                    <div class="table-filter">
+                        <div class="row">
+                            <div class="col-sm-3">
+                              <h2>My Orders</h2>
+                                <div class="show-entries">
+                                    <span>Showing</span>
+                                    <input type="text" class="form-control" style="width:50px;" value="{{orderdet1}}" readonly>
+                                    <span>entries</span>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Product Name</th>
+                                <th>Order Date</th>	
+                                <th>Negotiation Status</th>					
+                                <th>Quantity</th>						
+                                <th>Net Amount</th>
+                                <th>Status</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {%for orders in orderdet%}
+                            {%for prod in productss%}
+                            
+                            {%if orders.product_number|stringformat:'s' == prod.product_number|stringformat:'s'%}
+                            
+                            <tr>
+                                
+
+                                <td><script>document.write(c); var c=c+1;</script></td>
+                                <td style="width:350px;"><a href="singleproduct/{{prod.product_number}}">{{prod.product_name|truncatechars:30}}</a></td>
+                                <td>{{orders.ordered_date}}</td>
+                                <td style="width:200px;">{{orders.negotiation_status}}</td>       
+                                <td style="width:150px;">{{orders.quantity}}</td>     
+        <td><span>₹<script>var a="{{prod.product_price}}"; var b="{{orders.discount_price}}"; var d="{{orders.quantity}}"; var k=parseInt(b*d); document.write(new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 5 }).format(k));</script></span></td>              
+                                <td style="width:180px;"> 
+                                    
+                                    {% now "Y-m-d" as todays_date %}
+                                    {% if todays_date >= orders.ordered_date|plus_days:2|date:"Y-m-d" %}
+                                    <span class="status text-success">&bull;</span> Delivered</td>
+                                    {%elif todays_date == orders.ordered_date|plus_days:1|date:"Y-m-d"%}
+                                    <span class="status text-primary">&bull;</span> Shipped</td>
+                                    {%else%}
+                                    <span class="status text-warning">&bull;</span> Pending</td>
+
+                                    {% endif %}
+                                    
+                            
+
+
+                                
+                               </tr>
+                               {%endif%}
+                               
+                                {%endfor%}
+                                {%endfor%}
+
+                                                  </tbody>
+                    </table>
+                  
+                </div>
+            </div>     
+
+
+
+
+
+
+
+
+
+        </div>
+    
+        
+
+        <section class="info_section " style="margin-top: 50px;">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="info_contact">
+                    <h5>
+                      <a href="" class="navbar-brand">
+                        <span>
+                          Minics
+                        </span>
+                      </a>
+                    </h5>
+                    <p>
+                      <i class="fa fa-map-marker" aria-hidden="true"></i>
+                      Address
+                    </p>
+                    <p>
+                      <i class="fa fa-phone" aria-hidden="true"></i>
+                      +01 1234567890
+                    </p>
+                    <p>
+                      <i class="fa fa-envelope" aria-hidden="true"></i>
+                      demo@gmail.com
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="info_info">
+                    <h5>
+                      Information
+                    </h5>
+                    <p>
+                      Eligendi sunt, provident, debitis nemo, facilis cupiditate velit libero dolorum aperiam enim nulla iste maxime corrupti ad illo libero minus.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="info_links">
+                    <h5>
+                      Useful Link
+                    </h5>
+                    <ul>
+                      <li>
+                        <a href="index.html">
+                          Home
+                        </a>
+                      </li>
+                      <li>
+                        <a href="about.html">
+                          About
+                        </a>
+                      </li>
+                      <li>
+                        <a href="product.html">
+                          Products
+                        </a>
+                      </li>
+                      <li>
+                        <a href="why.html">
+                          Why Us
+                        </a>
+                      </li>
+                      <li>
+                        <a href="testimonial.html">
+                          Testimonial
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="info_form ">
+                    <h5>
+                      Newsletter
+                    </h5>
+                    <form action="">
+                      <input type="email" placeholder="Enter your email">
+                      <button>
+                        Subscribe
+                      </button>
+                    </form>
+                    <div class="social_box">
+                      <a href="">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                      </a>
+                      <a href="">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                      </a>
+                      <a href="">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                      </a>
+                      <a href="">
+                        <i class="fa fa-youtube" aria-hidden="true"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        
+          <!-- end info_section -->
+        
+        
+         
+        <footer class="footer_section">
+            <div class="container">
+              <p>
+                &copy; <span id="displayYear"></span> All Rights Reserved By
+                <a href="https://html.design/">Free Html Templates</a>
+              </p>
+            </div>
+          </footer>
+          <!-- footer section -->
+        
+          <!-- jQery -->
+          <script src="js/jquery-3.4.1.min.js"></script>
+          <!-- bootstrap js -->
+          <script src="js/bootstrap.js"></script>
+          <!-- custom js -->
+          <script src="js/custom.js"></script>
+        
+        
+        </body>
+        
+        </html>  

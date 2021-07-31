@@ -1,0 +1,944 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="{% static 'images/fevicon.png' %}" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Minics</title>
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+
+  <!-- fonts style -->
+  <link href="{% static 'https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap' %}" rel="stylesheet"> <!-- range slider -->
+
+  <!-- font awesome style -->
+  <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='https://use.fontawesome.com/releases/v5.8.1/css/all.css' rel='stylesheet'>
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+ 
+  <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js'></script>
+ 
+<script>
+  $(function() {
+    $('[data-toggle="tooltip"]').tooltip()
+    })
+
+    $(document).ready(function(){
+      $(this).scrollTop(0);
+  });
+</script>
+<style>
+  .dropbtn {
+    background:white;
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    margin:0;
+    width:213px;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 10px 12px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;}
+  
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  .dropdown:hover .dropbtn {background-color:#E8E8E8;}
+  
+
+
+ 
+    
+    /* WRAPPERS */
+    #wrapper {
+      width: 100%;
+      overflow-x: hidden;
+    }
+    .wrapper {
+      padding: 0 20px;
+    }
+    .wrapper-content {
+      padding: 20px 10px 40px;
+    }
+    #page-wrapper {
+      padding: 0 15px;
+      min-height: 568px;
+      position: relative !important;
+    }
+    @media (min-width: 768px) {
+      #page-wrapper {
+        position: inherit;
+        margin: 0 0 0 240px;
+        min-height: 2002px;
+      }
+    }
+    
+    /* Payments */
+    .payment-card {
+      background: #ffffff;
+      padding: 20px;
+      margin-bottom: 25px;
+      border: 1px solid #e7eaec;
+    }
+    .payment-icon-big {
+      font-size: 60px;
+      color: #d1dade;
+    }
+    .payments-method.panel-group .panel + .panel {
+      margin-top: -1px;
+    }
+    .payments-method .panel-heading {
+      padding: 15px;
+    }
+    .payments-method .panel {
+      border-radius: 0;
+    }
+    .payments-method .panel-heading h5 {
+      margin-bottom: 5px;
+    }
+    .payments-method .panel-heading i {
+      font-size: 26px;
+    }
+    
+    .payment-icon-big {
+        font-size: 60px !important;
+        color: #d1dade;
+    }
+    
+    .form-control,
+    .single-line {
+      background-color: #FFFFFF;
+      background-image: none;
+      border: 1px solid #e5e6e7;
+      border-radius: 1px;
+      color: inherit;
+      display: block;
+      padding: 6px 12px;
+      transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+      width: 100%;
+      font-size: 14px;
+    }
+    .text-navy {
+        color: #1ab394;
+    }
+    .text-success {
+        color: #1c84c6;
+    }
+    .text-warning {
+        color: #f8ac59;
+    }
+    .ibox {
+      clear: both;
+      margin-bottom: 25px;
+      margin-top: 0;
+      padding: 0;
+    }
+    .ibox.collapsed .ibox-content {
+      display: none;
+    }
+    .ibox.collapsed .fa.fa-chevron-up:before {
+      content: "\f078";
+    }
+    .ibox.collapsed .fa.fa-chevron-down:before {
+      content: "\f077";
+    }
+    .ibox:after,
+    .ibox:before {
+      display: table;
+    }
+    .ibox-title {
+      -moz-border-bottom-colors: none;
+      -moz-border-left-colors: none;
+      -moz-border-right-colors: none;
+      -moz-border-top-colors: none;
+      background-color: #ffffff;
+      border-color: #e7eaec;
+      border-image: none;
+      border-style: solid solid none;
+      border-width: 3px 0 0;
+      color: inherit;
+      margin-bottom: 0;
+      padding: 14px 15px 7px;
+      min-height: 48px;
+    }
+    .ibox-content {
+      background-color: #ffffff;
+      color: inherit;
+      padding: 15px 20px 20px 20px;
+      border-color: #e7eaec;
+      border-image: none;
+      border-style: solid solid none;
+      border-width: 1px 0;
+    }
+    .ibox-footer {
+      color: inherit;
+      border-top: 1px solid #e7eaec;
+      font-size: 90%;
+      background: #ffffff;
+      padding: 10px 15px;
+    }
+    .text-danger {
+        color: #ed5565;
+    }
+    a{
+        text-decoration: none !important;
+    }
+    span{
+        text-decoration: none !important;
+    }
+
+#ordersum
+{
+  width:100% !important;
+}
+
+.rounded {
+  border-radius: 1rem
+}
+
+.nav-pills .nav-link {
+  color: #555
+}
+
+.nav-pills .nav-link.active {
+  color: white
+}
+
+input[type="radio"] {
+  margin-right: 5px
+}
+
+.bold {
+  font-weight: bold
+}
+
+
+
+.dropbtn1 {
+  background:transparent;
+  padding: 5px;
+  font-size: 16px;
+  border: none;
+  margin:0;
+  width:auto;
+  color:white;
+  
+}
+.dropbtn1:hover {
+color:#f3c93e
+}
+.dropdown1 {
+  position: relative;
+  display: inline-block;
+  width:100px;
+  margin-right:40px;
+}
+
+.dropdown-content1 {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  text-align: left !important;
+  
+}
+
+.dropdown-content1 a {
+  color: black;
+  padding: 5px 6px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content1 a:hover {
+  color:blue;
+}
+
+.dropdown1:hover .dropdown-content1 {display: block;}
+
+.dropdown-menu
+{
+  margin-top:10px;
+  margin-left:-30px;
+}
+.dropdown-menu li:hover
+{
+  background:dodgerblue !important;
+  
+}
+
+</style>
+
+</head>
+
+
+<body>
+  <script>
+    var orprice="";
+    var discprice="";
+   
+  </script>
+  <div class="hero_area">
+  
+    <!-- header section strats -->
+    <div style="position:fixed;z-index:9999;width:100%;">
+    <header class="header_section">
+      <div class="header_top" style="background-color:#3a4468;height:75px;font-size:16px;">
+        <div class="container-fluid">
+          <div class="top_nav_container">
+            <div class="contact_nav">
+              <a class="navbar-brand" href="/">
+                <span style="font-size:27px !important;margin-left:-10px;">
+                  Minics
+                </span>
+              </a>
+             </div>
+           
+            
+              {% if sessemail%}
+              <div class="user_option_box">
+              <div class="dropdown1" >
+                
+                <button id="mypro" onmouseout="document.getElementById('mypro').style.color='white';"onmouseover="document.getElementById('mypro').style.color='#f3c93e';"data-toggle="dropdown" class="user-action"class="account-link dropbtn1" style="background:transparent;outline:none;border:0px;color:white;margin-left:-30px;">
+                  <i class="fa fa-user" aria-hidden="true"style="color:#f3c93e;"></i>
+                <span>
+                  {{fullname|truncatechars:7}} <i class="fa fa-caret-down" aria-hidden="true"></i>
+                </span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="/myprofile"><font color="black"><i style="color:black;" class="fas fa-user"></i></i> My Profile</font></a></li>
+                <li><a href="/myorders"><font color="black"><i style="color:black;"class="fa fa-shopping-cart" aria-hidden="true"></i> My Orders</font></a></li>
+                <li><a href="/mywishlist"><font color="black"><i style="color:black;"class="fa fa-heart" aria-hidden="true"></i> My Wishlist</font></a></li>
+                <li style="color:black;border-bottom:1px solid lightgrey;"></li>
+                <li><a href="/logout"><font color="black"><i style="color:black;" class="fas fa-sign-out-alt"></i> Logout</font></a></li>
+              </ul>
+              </div>
+              {%else%}
+                <div class="user_option_box">
+                <a href="/register" class="account-link">
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                  <span>
+                    Sign In / Register
+                  </span>
+                </a>
+                {% endif %}
+              
+              
+            </div>
+          </div>
+
+        </div>
+      </div>
+     
+    </header>
+</div>
+    <div class="container">
+        <div class="wrapper wrapper-content animated fadeInRight">
+            
+            <div class="row">
+        
+                <div class="col-lg-12">
+        
+                    <div class="ibox">
+                        <div class="ibox-title">
+                            Payment method
+                        </div>
+                        <div class="ibox-content">
+        
+                            <div class="panel-group payments-method" id="accordion">
+
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <div class="pull-right">
+                                            
+                                            <i class="fa fa-user text-success" aria-hidden="true"></i>
+                                        </div>
+                                        <h5 class="panel-title">
+                                          {% if perdetails == "filled"%}
+                                            <a data-toggle="collapse" data-parent="#accordion" >Personal Details</a>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse">
+                                      {%else%}
+                                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Personal Details</a>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse in">
+
+
+                                      {%endif%}
+
+                                        <div class="panel-body">
+        
+                                            <div class="row">
+                                             
+                                                <div class="col-md-8">
+        
+                                                    <form role="form" id="payment-form" action="" method="POST">
+                                                        {% csrf_token %}
+                                                        <div class="row">
+                                                          <div class="col-xs-12">
+                                                              <div class="form-group">
+                                                                  <label>Email Address:</label>
+                                                                  <div class="input-group">
+                                                                      <input type="text" class="form-control" name="emailid" value="{{detail.email}}" placeholder="Enter your Email" readonly>
+                                                                      <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                        <div class="row">
+                                                            <div class="col-xs-12">
+                                                                <div class="form-group">
+                                                                    <label>Full Name:</label>
+                                                                    <div class="input-group">
+                                                                      {% if detail.fullname|stringformat:'s' == "None"%}
+                                                                      <input type="text" class="form-control" name="fullname" value="" placeholder="Enter your Name" required="">
+                                                                      {%else%}
+                                                                        <input type="text" class="form-control" name="fullname" value="{{detail.fullname}}" placeholder="Enter your Name" required="">
+                                                                        {%endif%}
+                                                                        <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                      
+                                                        
+                                                        <div class="row">
+                                                            <div class="col-xs-12">
+                                                                <div class="form-group">
+                                                                    <label>Shipping Address:</label>
+                                                                    <div class="input-group">
+                                                                        {% if detail.address|stringformat:'s' == "None"%}
+                                                                        <input type="text" class="form-control" name="address" value="" placeholder="Enter your Shipping Address" required="">
+                                                                        {%else%}
+                                                                        <input type="text" class="form-control" name="address" value="{{detail.address}}" placeholder="Enter your Shipping Address" required="">
+                                                                        {%endif%}
+                                                                        <span class="input-group-addon"><i class="fa fa-address-card" aria-hidden="true"></i></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-xs-12">
+                                                                <div class="form-group">
+                                                                    <label>Phone Number:</label>
+                                                                    <div class="input-group">
+                                                                        {% if detail.phonenumber|stringformat:'s' == "None"%}
+                                                                        <input type="text" class="form-control" name="contact" value="" placeholder="Enter your Contact Number" required="">
+                                                                        {%else%}
+                                                                        <input type="text" class="form-control" name="contact" value="{{detail.phonenumber}}" placeholder="Enter your Contact Number" required="">
+                                                                        {%endif%}
+                                                                        <span class="input-group-addon"><i class="fa fa-phone" aria-hidden="true"></i></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-xs-12">
+                                                                <div class="form-group">
+                                                                    <label for="sel1">Country:</label>
+                                                                    <div class="input-group">
+                                                                  
+                                                                    <select class="form-control" name="country" id="sel1">
+                                                                        <option value="USA" {% if detail.country|stringformat:'s' == "USA" %}selected{%endif%}>USA</option>
+                                                                        <option value="India" {% if detail.country|stringformat:'s' == "India" %}selected{%endif%}>India</option>
+                                                                     <option value="Europe" {% if detail.country|stringformat:'s' == "Europe" %}selected{%endif%}>Europe</option>
+                                                                      <option value="Germany" {% if detail.country|stringformat:'s' == "Germany" %}selected{%endif%}>Germany</option>
+                                                                    </select>
+                                                                    
+                                                                        <span class="input-group-addon"><i class="fa fa-flag" aria-hidden="true"></i></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-xs-12">
+                                                                <div class="form-group">
+                                                                    <label>State:</label>
+                                                                    <div class="input-group">
+                                                                        {% if detail.state|stringformat:'s' == "None"%}
+                                                                        <input type="text" class="form-control" value="" name="state" placeholder="Enter your State" required="">
+                                                                        {%else%}
+                                                                        <input type="text" class="form-control" value="{{detail.state}}" name="state" placeholder="Enter your State" required="">
+                                                                        {%endif%}
+                                                                        <span class="input-group-addon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-xs-12">
+                                                                <div class="form-group">
+                                                                    <label>City:</label>
+                                                                    <div class="input-group">
+                                                                        {% if detail.city|stringformat:'s' == "None"%}
+                                                                        <input type="text" class="form-control" value=""name="city" placeholder="Enter your City" required="">
+                                                                        {%else%}
+                                                                        <input type="text" class="form-control" value="{{detail.city}}"name="city" placeholder="Enter your City" required="">
+                                                                        {%endif%}
+                                                                        <span class="input-group-addon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-xs-12">
+                                                                <div class="form-group">
+                                                                    <label>Pin Code:</label>
+                                                                    <div class="input-group">
+                                                                        {% if detail.pincode|stringformat:'s' == "None"%}
+                                                                        <input type="text" class="form-control" value="" name="pincode" placeholder="Enter your Pin Code" required="">
+                                                                        {%else%}
+                                                                        <input type="text" class="form-control" value="{{detail.pincode}}" name="pincode" placeholder="Enter your Pin Code" required="">
+                                                                        {%endif%}
+                                                                        <span class="input-group-addon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-xs-12">
+                                                                <button value="personal" name="personal" class="btn btn-primary" type="submit">Save</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <div class="pull-right">
+                                          <i class="fa fa-shopping-cart text-success" aria-hidden="true"></i>
+                                        </div>
+                                        <h5 class="panel-title">
+                                          {%if osum == "pfilled"%}
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Order Summary</a>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseTwo" class="panel-collapse collapse in" >
+                                      {%else%}
+                                      <a data-toggle="collapse" data-parent="#accordion">Order Summary</a>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseTwo" class="panel-collapse collapse" >
+                                      {%endif%}
+                                        <div class="panel-body"id="ordersum">
+        
+
+                                              
+                                            <div class="row" style="margin-left:0px;padding:0%;">
+                                              <form class="form-horizontal" method="post" action="" id="ordersummary">
+                                          
+                                                    {% csrf_token %}
+                                               
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-md-push-1 col-sm-push-1">
+                                                    <!--REVIEW ORDER-->
+                                                    <div class="panel panel-info">
+                                                        <div class="panel-heading">
+                                                            Review Order <div class="pull-right"><small><a class="afix-1" href="/gotocart">Edit Cart</a></small></div>
+                                                        </div>
+                                                        <div class="panel-body">
+                                                          {% for cart in carts %}
+
+                                                              {% for prods in proddet %}
+                                                              
+                                                              {% if cart.product_number|stringformat:'s' == prods.product_number|stringformat:'s'%}
+                                                              {% if cart.email|stringformat:'s' == sessem|stringformat:'s' %}
+                                                              
+
+                                                            <div class="form-group">
+                                                              
+                                                                <div class="col-sm-3 col-xs-3">
+                                                                    <img class="img-responsive" width="100px"height="100px" src="{{prods.product_image.url}}" />
+                                                                </div>
+                                                                <div class="col-sm-7 col-xs-6">
+                                                                    <div class="col-xs-12">{{prods.product_name}}</div>
+                                                                    <div class="col-xs-12"><small>Quantity:<span>{{cart.quantity}}</span></small></div>
+                                                                </div>
+                                                                <div class="col-sm-2 col-xs-3 text-right">
+                                                                  {%if cart.negotiation_status|stringformat:'s' == "negotiated"%} 
+                                                                    <h6><span>₹</span><script>var a="{{prods.product_price}}"; var b="{{cart.discount_price}}"; var d="{{cart.quantity}}";  var k=parseInt(b*d); var orprice=parseInt(a*d+orprice); var discprice=parseInt(discprice+(a-b)*d); document.write(new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 5 }).format(k));</script><small><b><font color="green" size="1px;">(N)</font></b></small></h6>
+                                                                    {%else%}
+                                                                    <h6><span>₹</span><script>var a="{{prods.product_price}}"; var b="{{cart.discount_price}}"; var d="{{cart.quantity}}";  var k=parseInt(b*d); var orprice=parseInt(a*d+orprice); var discprice=parseInt(discprice+(a-b)*d); document.write(new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 5 }).format(k));</script></h6>
+                                                                    {%endif%}
+                                                                  </div>
+                                                               
+                                                                
+                                                            </div>
+                                                            <div class="form-group"><hr /></div>
+                                                           
+                                                             {%endif %}
+                                                                  
+                                                                  {%endif %}
+                                                                 
+                                                                  {%endfor %}
+                                                                  {%endfor %}
+                                                            <div class="form-group">
+                                                                <div class="col-xs-12">
+                                                                    <strong>Subtotal</strong>
+                                                                    <div class="pull-right"><span style="margin-left:140px;">₹<script>document.write(new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 5 }).format(orprice));</script></span></div>
+                                                                </div>
+                                                                <div class="col-xs-12">
+                                                                    <small>Shipping</small>
+                                                                    <div class="pull-right"><span>-</span></div>
+                                                                </div>
+                                                                <div class="col-xs-12">
+                                                                  <small>Discount</small>
+                                                                  <div class="pull-right"><span>-₹<script>document.write(new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 5 }).format(discprice));</script></span></div>
+                                                              </div>
+                                                            </div>
+                                                            <div class="form-group"><hr /></div>
+                                                            <div class="form-group">
+                                                                <div class="col-xs-12">
+                                                                    <strong>Order Total</strong>
+                                                                    <div class="pull-right"><span>₹<script>document.write(new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 5 }).format(orprice-discprice));</script></span></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--REVIEW ORDER END-->
+                                </div>
+                             
+                                <div class="row "style="margin-top:10px;">
+                                  <div class="col-xs-12 col-md-push-0 col-sm-push-1">
+                                      <button value="confirmorder" name="confirmorder" class="btn btn-primary" type="submit">Continue</button>
+                                  </div>
+                                </form>
+                            
+                                </div>
+                              </div>
+
+                                <!--panel-->                                           
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <div class="pull-right">
+                                          <i class="fas fa-money-check-alt text-success"></i>
+                                        </div>
+                                        <h5 class="panel-title">
+                                        {%if osum == "filled"%}
+                                
+                                      <a data-toggle="collapse" data-parent="#accordion" href="#collapsethree">Payment Option</a>
+                                        </h5>
+                                    </div>
+                                    <div id="collapsethree" class="panel-collapse collapse in">
+                                      {%else%}
+                                      <a data-toggle="collapse" data-parent="#accordion">Payment Option</a>
+                                        </h5>
+                                    </div>
+                                    <div id="collapsethree" class="panel-collapse collapse ">
+                                      
+                                      {%endif%}
+                                        <div class="panel-body">
+                                         
+        
+                                          <div class="container py-5">
+                                            <!-- For demo purpose -->
+                                            <div class="row">
+                                              <div class="col-lg-6 mx-auto">
+                                                  <div class="card ">
+                                                      <div class="card-header">
+                                                          <div class="bg-white shadow-sm pt-4 pl-2 pr-2 pb-2">
+                                                              <!-- Credit card form tabs -->Please Select a option
+                                                              <ul role="tablist" class="nav bg-light nav-pills rounded nav-fill mb-3"style="font-size:18px;">
+                                                                  <li class="nav-item"> <a data-toggle="pill" href="#credit-card" class="nav-link"> <i class="fas fa-credit-card mr-2"></i> Debit Card </a> </li>
+                                                                  <li class="nav-item"> <a data-toggle="pill" href="#paypal" class="nav-link "> <i class="fa fa-money"></i> Cash On Delivery </a> </li>
+
+                                                              </ul>
+                                                          </div> <!-- End -->
+                                                          <!-- Credit card form content -->
+                                                          <div class="tab-content">
+                                                              <!-- credit card info-->
+                                                              <div id="credit-card" class="tab-pane fade show active pt-3">
+                                                                  <form role="form" action="" method="POST">
+                                                                    {% csrf_token %}
+                                               
+                                                                    <div class="row">
+                                                                      <div class="col-xs-12">
+                                                                          <div class="form-group">
+                                                                              <label>Card Holder Name</label>
+                                                                              <div class="input-group">
+                                                                                  <input type="text" class="form-control" name="cardholder" value="" placeholder="Enter Card Holder Name" required="">
+                                                                                  <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                  </div>
+                                                                  <div class="row">
+                                                                    <div class="col-xs-12">
+                                                                        <div class="form-group">
+                                                                            <label>Card Number</label>
+                                                                            <div class="input-group">
+                                                                                <input type="text" class="form-control" name="cardno" value="" placeholder="Enter Card Number" required="">
+                                                                                <span class="input-group-addon"><i class="fab fa-cc-visa"></i> <i class="fab fa-cc-mastercard"></i> <i class="fab fa-cc-amex"></i></span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                                <div class="row">
+                                                                  <div class="col-xs-12">
+                                                                    <label>Expiry Date</label>
+                                                                    <div class="form-inline">
+                                                                  <div class="form-group">
+                                                                          <div class="input-group">
+                                                                              <input type="number" class="form-control" name="month" value="" placeholder="MM" required="">
+                                                                          
+                                                                          </div>
+                                                                      </div>
+                                                                      <div class="form-group">
+                                                                        <div class="input-group">
+                                                                    
+                                                                      <input type="number" class="form-control" name="year" value="" placeholder="YY" required="">
+                                                                       </div>
+                                                                       </div>
+                                                                      </div>
+                                                                  </div>
+                                                              </div>
+                                                              <div class="row">
+                                                                <div class="col-xs-12">
+                                                                    <div class="form-group">
+                                                                        <label>CVV</label>
+                                                                        <div class="input-group">
+                                                                            <input type="password" class="form-control" name="cvv" value="" placeholder="Enter CVV" required="">
+                                                                          
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <input type="hidden" value="" id="mytext1" name="amount">
+                                                                  
+                                                                      <div class="card-footer"> <button type="submit" name="creditcard" value="creditcard" style="font-size:18px;"class="subscribe btn btn-primary btn-block shadow-sm"> Confirm Payment </button>
+                                                                  </form>
+                                                              </div>
+                                                          </div> <!-- End -->
+                                                          <!-- Paypal info -->
+                                                          <div id="paypal" class="tab-pane fade pt-3">
+                                                            <form role="form" action="" method="POST">
+                                                              {% csrf_token %}
+                                                              <input type="hidden" id="mytext2" value="" name="amount">
+                                                           
+                                                              <h5 class="pb-2">Pay <span>₹<script>document.write(new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 5 }).format(orprice-discprice));</script> on delivery</h5>
+                                                              <p> <button type="submit" name="cod" value="cod"class="btn btn-primary "> Confirm Payment</button> </p>
+                                                              </form>
+                                                              <script>  
+                                                                var test = parseInt(orprice-discprice);
+                                                                document.getElementById("mytext1").value = test; 
+                                                                document.getElementById("mytext2").value = test; 
+                                                               </script>
+                                                          </div> <!-- End -->
+                                                          <!-- bank transfer info -->
+                                                          
+                                                          <!-- End -->
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          </div>
+                                            <!--Panel end-->
+                                             </div>
+                                             
+                                    </div>
+                                </div>
+                              
+
+                                
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!--Main Div-->
+        
+        </div>
+
+
+        <!-- info section -->
+  <section class="info_section "style="position:relative;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="info_contact">
+            <h5>
+              <a href="" class="navbar-brand">
+                <span>
+                  Minics
+                </span>
+              </a>
+            </h5>
+            <p>
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              Address
+            </p>
+            <p>
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              +01 1234567890
+            </p>
+            <p>
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              demo@gmail.com
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_info">
+            <h5>
+              Information
+            </h5>
+            <p>
+              Eligendi sunt, provident, debitis nemo, facilis cupiditate velit libero dolorum aperiam enim nulla iste maxime corrupti ad illo libero minus.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_links">
+            <h5>
+              Useful Link
+            </h5>
+            <ul>
+              <li>
+                <a href="index.html">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="about.html">
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="product.html">
+                  Products
+                </a>
+              </li>
+              <li>
+                <a href="why.html">
+                  Why Us
+                </a>
+              </li>
+              <li>
+                <a href="testimonial.html">
+                  Testimonial
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_form ">
+            <h5>
+              Newsletter
+            </h5>
+            <form action="">
+              <input type="email" placeholder="Enter your email">
+              <button>
+                Subscribe
+              </button>
+            </form>
+            <div class="social_box">
+              <a href="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-youtube" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info_section -->
+
+
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="https://html.design/">Free Html Templates</a>
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+  <!-- jQery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.js"></script>
+  <!-- custom js -->
+  <script src="js/custom.js"></script>
+
+
+</body>
+
+</html>
+
+
+        

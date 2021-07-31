@@ -1,0 +1,1607 @@
+{% load static %}
+{% load filter_tags %}
+{% load humanize %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="{% static 'images/fevicon.png' %}" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+ 
+  <title>Minics</title>
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+
+  <!-- fonts style -->
+  <link href="{% static 'https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap' %}" rel="stylesheet"> <!-- range slider -->
+
+  <!-- font awesome style -->
+  <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+ 
+  <link
+  rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+  integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+  crossorigin="anonymous"
+/> 
+
+
+
+
+
+<script src=  
+"https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js">  
+    </script>  
+    
+    <script src=  
+"https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js">  
+    </script>  
+    
+    <link href=  
+"http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css"
+        rel="stylesheet" type="text/css" />   
+
+        
+
+
+
+        
+
+
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <link rel="stylesheet" href="https://mdbootstrap.com/previews/ecommerce-demo/css/mdb-pro.min.css">
+          <link rel="stylesheet" href="https://mdbootstrap.com/previews/ecommerce-demo/css/mdb.ecommerce.min.css">
+
+        
+          
+          <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+          
+          
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script> 
+         
+<style>
+ 
+  .add_cart_btn
+  {
+  width: 175px;
+  height: 45px;
+  line-height: 45px;
+  background-color: #3a4468;
+  color:white;
+  position: absolute;
+  transition: all .3s;
+  z-index: 3;
+  text-align: center;
+  }
+  .add_cart_btn:hover {
+    background-color: #f3c93e;
+    color: #ffffff;
+  }
+   .dropbtn2 {
+          background:white;
+          padding: 5px;
+          font-size: 16px;
+          border: none;
+          margin:0;
+          width:213px;
+        }
+        
+        .dropdown2 {
+          position: relative;
+          display: inline-block;
+        }
+        
+        .dropdown-content2 {
+          display: none;
+          position: absolute;
+          background-color: #f1f1f1;
+          min-width: 200px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 100000000000000 !important;
+        }
+        
+        .dropdown-content2 a {
+          color: black;
+          padding: 10px 12px;
+          text-decoration: none;
+          display: block;
+         
+        }
+        
+        .dropdown-content2 a:hover {
+          background-color: #ddd;}
+        
+        .dropdown2:hover .dropdown-content2 {display: block;}
+        
+        .dropdown2:hover .dropbtn2 {background-color:#E8E8E8;}
+
+
+
+
+
+
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+html,
+body {
+	height: 100%;
+}
+body {
+	font: 16px/1.2 "Roboto", sans-serif;
+	color: #333;
+}
+.blog {
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	position: absolute;
+	bottom: 15px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 1;
+}
+.alink {
+	display: inline-block;
+	text-align: center;
+	cursor: pointer;
+}
+input[type="text"],
+button {
+	padding: 4px 8px;
+	border: 0;
+	outline: 0;
+}
+button {
+	background-color: transparent;
+	cursor: pointer;
+}
+
+
+/* container */
+.containers {
+  width: 450px;
+  height:450px;
+  position: fixed;
+  bottom:10px;
+ right:10px;
+  
+  z-index: 6000;
+  
+  border-radius: 10px;
+  background-color: #f9fbff;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow:hidden ;
+	
+}
+
+/* chat_box */
+.chat_box {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+  
+}
+.chat_box > * {
+	padding: 16px;
+}
+
+/* head */
+.head {
+	display: flex;
+	align-items: center;
+}
+.head .user {
+	display: flex;
+	align-items: center;
+	flex-grow: 1;
+}
+.head .user .avatar {
+	margin-right: 8px;
+}
+.head .user .avatar img {
+	display: block;
+	border-radius: 50%;
+}
+.head .bar_tool {
+	display: flex;
+}
+.head .bar_tool i {
+	padding: 5px;
+	width: 30px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.chat_box {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.chat_box > * {
+  padding: 16px;
+}
+.msg
+{
+	border:0;
+	outline:none;
+}
+/* head */
+.head {
+  display: flex;
+  align-items: center;
+  
+}
+.head .user {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+ 
+}
+.head .user .avatar {
+  margin-right: 8px;
+}
+
+.head .bar_tool {
+  display: flex;
+}
+.head .bar_tool i {
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   
+}
+
+/* body */
+.body {
+  flex-grow: 1;
+  background-color: #eee;
+max-height:450px;
+overflow-y:scroll;
+}
+
+.body::-webkit-scrollbar {
+  width:10px;
+
+}
+
+
+.body::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+.body::-webkit-scrollbar-thumb {
+  background: #888; 
+border-radius:10px;
+}
+
+
+.body::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+
+
+
+.bubble {
+  display: inline-block;
+  padding: 5px 15px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+max-width:350px;
+ white-space: normal;
+
+}
+.bubble p {
+   font-size: 16px;
+  text-align: left;
+  
+  margin-top:5px;
+  line-height: 1;
+  word-wrap: break-word;
+ white-space: normal;
+}
+
+.incoming {
+  text-align: left;
+left:10px;
+
+}
+
+.incoming .bubble {
+  background-color: dodgerblue;
+  color:white;
+}
+.outgoing {
+  text-align: right;
+
+}
+.outgoing .bubble {
+  background-color: #ccccd4;
+  color:black;
+}
+
+#img {
+  border-radius: 50%;
+  height: 80px;
+  width: 85px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#chat-title {
+  text-align: center;
+}
+#space {
+  height: 5px;
+}
+
+     
+
+
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index:30000; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0%;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.picbig
+{
+  position:absolute;
+  width:0px;
+  transition:width 0.3s linear 0s;
+  z-index:10;
+
+}
+#pic:hover + .picbig
+{
+width:400px;
+border:5px solid black;
+margin-top:-5px;
+}
+
+
+.dropbtn1 {
+  background:transparent;
+  padding: 5px;
+  font-size: 16px;
+  border: none;
+  margin:0;
+  width:auto;
+  color:white;
+
+  
+}
+.dropbtn1:hover {
+color:#f3c93e
+}
+.dropdown1 {
+  position: relative;
+  display: inline-block;
+  width:100px;
+}
+
+.dropdown-content1 {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  text-align: left !important;
+  
+}
+
+.dropdown-content1 a {
+  color: black;
+  padding: 5px 6px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content1 a:hover {
+  color:blue;
+}
+
+.dropdown1:hover .dropdown-content1 {display: block;}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.dropdown-menu
+{
+  margin-top:10px;
+  margin-left:-30px;
+  
+}
+.dropdown-menu li
+{
+  padding:2px;
+}
+.dropdown-menu li:hover
+{
+  background:dodgerblue;
+  
+}
+.badge {
+  font-size: 12px;
+  background: #ff0000;
+  color: #fff;
+  padding: 0 5px;
+  vertical-align: top;
+ 
+}
+
+
+#mystar {
+  background: linear-gradient(to right, orange 50%, grey 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+      </style>
+
+    <script>
+      a=1;
+    </script>
+
+
+      </head>
+      
+      <body onkeydown="return (event.keyCode != 116);"style="background:#fff;"onload="document.getElementById('fivestar').style.color='grey';">
+        
+        <div class="hero_area">
+        
+          <!-- header section strats -->
+          <div style="position:fixed;z-index:9999;width:100%;">
+          <header class="header_section" >
+            <div class="header_top" style="background-color:#3a4468;">
+              <div class="container-fluid">
+                <div class="top_nav_container">
+                  <div class="contact_nav">
+                    <a class="navbar-brand" href="/">
+                      <span>
+                        Minics
+                      </span>
+                    </a>
+                   </div>
+                   <form method="POST" action="/search">
+                    <from class="search_form">
+                      
+                        {% csrf_token %}
+                      <input type="text" class="form-control" id="tags" name="searchtext" placeholder="Search here..."required>
+                      <button class="" type="submit"name="searchbtn">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                      </button>
+                      
+                    </from>
+                  </form>
+                    {% if sessemail%}
+                    <div class="user_option_box">
+                    <div class="dropdown1" >
+                      
+                      <button sid="mypro" onmouseout="document.getElementById('mypro').style.color='white';"onmouseover="document.getElementById('mypro').style.color='#f3c93e';"data-toggle="dropdown" class="user-action"class="account-link dropbtn1" style="background:transparent;outline:none;border:0px;color:white;margin-left:-30px;">
+                        <i class="fa fa-user" aria-hidden="true"style="color:#f3c93e;"></i>
+                      <span>
+                        {{fullname|truncatechars:7}} <i class="fa fa-caret-down" aria-hidden="true"></i>
+                      </span>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a href="/myprofile"><font color="black"><i style="color:black;" class="fas fa-user"></i></i> My Profile</font></a></li>
+                      <li><a href="/myorders"><font color="black"><i style="color:black;"class="fa fa-shopping-cart" aria-hidden="true"></i> My Orders</font></a></li>
+                      <li><a href="/mywishlist"><font color="black"><i style="color:black;"class="fa fa-heart" aria-hidden="true"></i> My Wishlist</font></a></li>
+                      <li style="color:black;border-bottom:1px solid lightgrey;"></li>
+                      <li><a href="/logout"><font color="black"><i style="color:black;" class="fas fa-sign-out-alt"></i> Logout</font></a></li>
+                    </ul>
+                    </div>
+                    {%else%}
+                      <div class="user_option_box">
+                      <a href="/register" class="account-link">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <span>
+                          Sign In / Register
+                        </span>
+                      </a>
+                      {% endif %}
+                    <a href="/gotocart" class="cart-link">
+                      <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                      <span>
+                        Cart
+                        {%if cartt == 0%}
+                  {%else%}
+                  <span class="badge">{{cartt}}</span>
+                  {%endif%}
+                      </span>
+                    </a>
+                  </div>
+                </div>
+      
+              </div>
+            </div>
+           
+          </header>
+        </div>
+        <div style="margin-top:70px;"></div>
+          <script>
+            $.noConflict();
+          $(document).ready(function(){
+            $( "#tags" ).keypress(function() {
+              var prodsname = [
+                  {%for rec in records%}
+                      "{{rec.related_to}}",
+                  {%endfor%}
+                  {%for rec1 in records1%}
+                "{{rec1.product_name}}",
+              
+            {%endfor%}
+            {%for rec2 in records2%}
+                "{{rec2.brand}}",
+              
+            {%endfor%}
+              ];
+           
+              $( "#tags" ).autocomplete({
+                source: prodsname
+              });
+              
+            } );
+          } );
+            </script>
+          <!-- end header section -->
+          <!-- slider section -->
+          
+         
+              <div style="display:inline-block;background-color:white;width:100%;">
+             {% for cats in cat %}
+             <div class="dropdown2" >
+             <button class="dropbtn2">
+           <img src="{{cats.catimage.url}}" width="80px" height="100px" style="margin-left:5px;">
+           
+           <span>{{cats.catname}}</span> 
+          </button>
+          <div class="dropdown-content2">
+            {% for subs in subcat %}
+              {% if subs.catnam|stringformat:'s' == cats.catname|stringformat:'s' %}
+              <a href="/showproduct/{{cats.catname}}/{{subs.subcatname}}/all">{{subs.subcatname}}</a>
+            {% endif %}
+            
+           
+            {% endfor %} 
+            </div>
+          </div>
+            {% endfor %}
+            </div>
+       
+            <div style="margin-top:35px;"></div>
+        
+       
+       
+        
+        
+      <main>
+        <div class="container">
+    
+          <!--Section: Block Content-->
+          <section class="mb-5">
+    
+            <div class="row">
+              <div class="col-md-6 mb-4 mb-md-0">
+    
+                <div id="mdb-lightbox-ui"></div>
+    
+                <div class="mdb-lightbox">
+    
+                  <div class="row product-gallery mx-1">
+    
+                    <div class="col-12 mb-0">
+                      <figure id="pic"class="view overlay rounded z-depth-1 main-img" title="{{product.product_number}}" style="max-height: 495px;">
+                          <img src="{{product.product_image.url}}"class="img-fluid z-depth-1" id="pic" style="height:495px;margin-top: -20px;">
+                      </figure>
+                      <img class="picbig" src="{{product.product_image.url}}">   
+     
+                    </div>
+                    
+                  </div>
+    
+                </div>
+    
+              </div>
+              <div class="col-md-6">
+    
+                <h5>{{product.product_name}}</h5>
+                <p class="mb-2 text-muted text-uppercase small">{{getdetail.related_to}}</p>
+                <ul class="rating">
+                  {%if avgreview|stringformat:'s' == "None" %}
+                  <li>
+                    <i class="fas fa-star fa-sm" style="color:orange;"></i>
+                  </li>
+                  <li>
+                    <i class="fas fa-star fa-sm" style="color:orange;"></i>
+                  </li>
+                  <li>
+                    <i class="fas fa-star fa-sm" style="color:orange;"></i>
+                  </li>
+                  <li>
+                    <i class="fas fa-star fa-sm" style="color:orange;"></i>
+                  </li>
+                  <li>
+                    <i class="fas fa-star fa-sm" style="color:grey;"></i>
+                  </li>
+               
+                  {%else%}
+                  <li>
+                    {%if avgreview < 1.0 and avgreview > 0.0%}
+                    <i class="fas fa-star fa-sm" id="mystar"></i>
+                    {%elif avgreview >= 1.0%}
+                    <i class="fas fa-star fa-sm" style="color:orange;"></i>
+                    {%else%}
+                    <i class="fas fa-star fa-sm" style="color:grey;"></i>
+                    {%endif%}
+                  </li>
+                  <li>
+                    {%if avgreview < 2.0 and avgreview > 1.0%}
+                    <i class="fas fa-star fa-sm" id="mystar"></i>
+                    {%elif avgreview >= 2.0%}
+                    <i class="fas fa-star fa-sm" style="color:orange;"></i>
+                    {%else%}
+                    <i class="fas fa-star fa-sm" style="color:grey;"></i>
+                    {%endif%}
+                  </li>
+                  <li>
+                    {%if avgreview < 3.0 and avgreview > 2.0%}
+                    <i class="fas fa-star fa-sm" id="mystar"></i>
+                    {%elif avgreview >= 3.0%}
+                    <i class="fas fa-star fa-sm" style="color:orange;"></i>
+                    {%else%}
+                    <i class="fas fa-star fa-sm" style="color:grey;"></i>
+                    {%endif%}
+                  </li>
+                  <li>
+                    {%if avgreview < 4.0 and avgreview > 3.0%}
+                    <i class="fas fa-star fa-sm" id="mystar"></i>
+                    {%elif avgreview >= 4.0%}
+                    <i class="fas fa-star fa-sm" style="color:orange;"></i>
+                    {%else%}
+                    <i class="fas fa-star fa-sm" style="color:grey;"></i>
+                    {%endif%}
+                  </li>
+                  <li>
+                    {%if avgreview < 5.0 and avgreview > 4.0%}
+                    <i class="fas fa-star fa-sm" id="mystar"></i>
+                    {%elif avgreview >= 5.0%}
+                    <i class="fas fa-star fa-sm" style="color:orange;"></i>
+                    {%else%}
+                    <i class="fas fa-star fa-sm" style="color:grey;"></i>
+                    {%endif%}
+                  </li>
+                  {%endif%}
+                </ul>
+                <p><span style="font-size:18px;"class="mr-1"><b>&#8377;{{disprice|intcomma}}</b></span>  <span class="mr-1"><strike><strong>&#8377;{{product.product_price|intcomma}}</strong></strike></span> <span style="color:green;font-size:14px;font-weight:bold;">{{getdetail.discount}}% off</span></p>
+                {%if exist|stringformat:'s' == "exist" %}
+                <a style="color:white;cursor:pointer;"class="add_cart_btn" id="myBtn">
+                <span><i class="fas fa-shopping-cart pr-2"></i> Add To Cart</span>
+                 </a>
+                {%else%}
+                <a href="/mycart/{{product.product_number}}/Not negotiated" class="add_cart_btn">
+                  <span><i class="fas fa-shopping-cart pr-2"></i> Add To Cart</span>
+                 </a>
+                {%endif%}
+                <form method="POST">
+                  {%csrf_token%}
+                  <input type="hidden" name="pnum" value="{{product.product_number}}">
+                <button type="submit" name="wishlist" style="color:white;cursor:pointer;margin-left:200px;"class="add_cart_btn btn-danger">
+                  <span><i class="fa fa-heart"></i> WishList</span>
+                </button>
+              </form>
+
+                <div id="myModal" class="modal">
+
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h4 class="modal-title">Item Already Exists</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <p>Your Item already exists in the cart. Do you want to Go to Cart?</p>
+                      </div>
+                      <div class="modal-footer">
+                        <a href="/gotocart" class="btn btn-primary">Yes</a>
+        
+                      </div>
+                    </div>
+                  </div>
+                
+                </div>
+                <script>
+                  // Get the modal
+                  var modal = document.getElementById("myModal");
+                  
+                  // Get the button that opens the modal
+                  var btn = document.getElementById("myBtn");
+                  
+                  // Get the <span> element that closes the modal
+                  var span = document.getElementsByClassName("close")[0];
+                  
+                  // When the user clicks the button, open the modal 
+                  btn.onclick = function() {
+                    modal.style.display = "block";
+                  }
+                  
+                  // When the user clicks on <span> (x), close the modal
+                  span.onclick = function() {
+                    modal.style.display = "none";
+                  }
+                  
+                  // When the user clicks anywhere outside of the modal, close it
+                  window.onclick = function(event) {
+                    if (event.target == modal) {
+                      modal.style.display = "none";
+                    }
+                  }
+                  </script>
+
+                  <script>
+                    function displaybox()
+                    {
+                      document.getElementById('chatbots').style.display="block";
+                      
+                    }
+                    function closebox()
+                    {
+                      document.getElementById('chatbots').style.display="none";
+                      
+                    }
+                  </script>
+                <div style="margin-top:80px;"></div>
+                <div class="table-responsive">
+                  <table class="table table-sm table-borderless mb-0">
+                    <tbody>
+                      <tr>
+                        <th class="pl-0 w-25" scope="row"><strong>Brand</strong></th>
+                        <td>{{getdetail.brand}}</td>
+                      </tr>
+                      <tr>
+                        <th class="pl-0 w-25" scope="row"><strong>Color</strong></th>
+                        <td>{{getdetail.color}}</td>
+                      </tr>
+                      <tr>
+                        <th class="pl-0 w-25" scope="row"><strong>Delivery Location</strong></th>
+                        <td>India, Europe, USA, Germany</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <hr>
+                <div class="table-responsive mb-2">
+                  <table class="table table-sm table-borderless">
+                    <tbody>
+                      <tr>
+                        
+                        <td class="pb-0">Select size</td>
+                      </tr>
+                      <tr>
+                  
+                        <td>
+                
+                {% with getdetail.size|split:"," as tags %}
+                {% for tag in tags %}
+                {% if tag%}
+                <div class="mt-1">
+                  <div class="form-check form-check-inline pl-0">
+                    <input type="radio" class="form-check-input" id="{{tag}}" name="materialExampleRadios" checked>
+                    <label class="form-check-label large text-uppercase card-link-secondary"
+                      for="{{tag}}">{{tag}}</label>
+                  </div>
+                  </div>
+              {%endif %}
+                {% endfor %}
+                {% endwith %}
+                          
+                            
+                            
+                          
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                
+              </div>
+            </div>
+    
+          </section>
+          <!--Section: Block Content-->
+    
+          <!-- Classic tabs -->
+          <div class="classic-tabs"style="margin-top:100px;">
+    
+            <ul class="nav tabs-primary nav-justified" id="advancedTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active show" id="description-tab" data-toggle="tab" href="#description" role="tab"
+                  aria-controls="description" aria-selected="true">Description</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="info-tab" data-toggle="tab" href="#info" role="tab" aria-controls="info"
+                  aria-selected="false">Information</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews"
+                  aria-selected="false">Reviews ({{myreviewsscount}})</a>
+              </li>
+            </ul>
+            <div class="tab-content" id="advancedTabContent">
+              <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
+                <h5>Product Description</h5>
+                <p class="small text-muted text-uppercase mb-2">{{product.product_name}}</p>
+                <ul>
+           
+                  {% with getdetail.description|split:"#" as tags %}
+                  {% for tag in tags %}
+                  {% if tag%}
+                <li> {{tag}}</li>
+                {%endif %}
+                  {% endfor %}
+                  {% endwith %}
+                </ul>
+              
+
+
+              </div>
+              <div class="tab-pane fade" id="info" role="tabpanel" aria-labelledby="info-tab">
+                <h5>Additional Information</h5>
+                <table class="table table-striped table-bordered mt-3">
+                  <thead>
+                    <tr>
+                      <th scope="row" class="w-150 dark-grey-text h6">Weight</th>
+                      <td><em>{{getdetail.item_weight}}</em></td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row" class="w-150 dark-grey-text h6">Type</th>
+                      <td><em>{{getdetail.type}}</em></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              
+              <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+                <h5><span>{{myreviewsscount}}</span> reviews for <span>{{product.product_name}}</span></h5>
+                {%for rew in myreviewss%}
+                {%for usd in usdet%}
+                {%if rew.email|stringformat:'s' == usd.email|stringformat:'s'%}
+                <div class="media mt-3 mb-4">
+                  {% if usd.gender|stringformat:'s' == "Male" %}
+                  <img class="d-flex mr-3 z-depth-1" src="{% static 'images/dummymen.jpg' %}" width="62">
+                  {%elif usd.gender|stringformat:'s' == "Female"%}
+                  <img class="d-flex mr-3 z-depth-1" src="{% static 'images/dummywomen.png' %}" width="62">
+                  {%else%}
+                  <img class="d-flex mr-3 z-depth-1" src="{% static 'images/questionmark.jpg' %}" width="62">
+                  {%endif%}
+                  
+                     
+                  <div class="media-body">
+                    <div class="d-flex justify-content-between">
+                      <p class="mt-1 mb-2">
+                        <strong>{{usd.fullname}} </strong>
+                        <span>– </span><span>{{rew.review_date}}</span>
+                      </p>
+                      <ul class="rating mb-0">
+                        <li>
+                          {%if rew.stars >= 1%}
+                          <i class="fas fa-star fa-sm" style="color:orange;"></i>
+                          {%else%}
+                          <i class="fas fa-star fa-sm" style="color:grey;"></i>
+                          {%endif%}
+                        </li>
+                        <li>
+                          {%if rew.stars >= 2%}
+                          <i class="fas fa-star fa-sm" style="color:orange;"></i>
+                          {%else%}
+                          <i class="fas fa-star fa-sm" style="color:grey;"></i>
+                          {%endif%}
+                        </li>
+                        <li>
+                          {%if rew.stars >= 3%}
+                          <i class="fas fa-star fa-sm" style="color:orange;"></i>
+                          {%else%}
+                          <i class="fas fa-star fa-sm" style="color:grey;"></i>
+                          {%endif%}
+                        </li>
+                        <li>
+                          {%if rew.stars >= 4%}
+                          <i class="fas fa-star fa-sm" style="color:orange;"></i>
+                          {%else%}
+                          <i class="fas fa-star fa-sm" style="color:grey;"></i>
+                          {%endif%}
+                        </li>
+                        <li>
+                          {%if rew.stars >= 5%}
+                          <i class="fas fa-star fa-sm" style="color:orange;"></i>
+                          {%else%}
+                          <i class="fas fa-star fa-sm" style="color:grey;"></i>
+                          {%endif%}
+                        </li>
+                      </ul>
+                    </div>
+                    <p class="mb-0">{{rew.suggestion}}</p>
+                  </div>
+                </div>
+                {%endif%}
+                {%endfor%}
+                {%endfor%}
+          
+                <hr>
+                <h5 class="mt-4">Add a review</h5>
+                <p>Your email address will not be published.</p>
+                <form method="POST" action="/review">
+                  {%csrf_token%}  
+              
+                  <div class="my-3">
+                  <ul class="rating mb-0">
+                    <li>
+                      <a id="onestar"onclick="onestar();">
+                        <i class="fas fa-star fa-sm"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a id="twostar"onclick="twostar();">
+                        <i class="fas fa-star fa-sm"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a id="threestar"onclick="threestar();">
+                        <i class="fas fa-star fa-sm"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a id="fourstar"onclick="fourstar();">
+                        <i class="fas fa-star fa-sm"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a id="fivestar"onclick="fivestar();">
+                        <i class="fas fa-star fa-sm"></i>
+                      </a>
+                      <input type="hidden" name="prnum" value="{{product.product_number}}">
+                      <input type="hidden"id="myrating" name="myrating"value="4">
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <script>
+                    function onestar()
+                    {
+                      document.getElementById('onestar').style.color='orange';
+                      document.getElementById('twostar').style.color='grey';
+                      document.getElementById('threestar').style.color='grey';
+                      document.getElementById('fourstar').style.color='grey';
+                      document.getElementById('fivestar').style.color='grey';
+                      document.getElementById('myrating').value='1';
+
+                    }
+                    function twostar()
+                    {
+                      document.getElementById('onestar').style.color='orange';
+                      document.getElementById('twostar').style.color='orange';
+                      document.getElementById('threestar').style.color='grey';
+                      document.getElementById('fourstar').style.color='grey';
+                      document.getElementById('fivestar').style.color='grey';
+                      document.getElementById('myrating').value='2';
+
+                    }
+                    function threestar()
+                    {
+                      document.getElementById('onestar').style.color='orange';
+                      document.getElementById('twostar').style.color='orange';
+                      document.getElementById('threestar').style.color='orange';
+                      document.getElementById('fourstar').style.color='grey';
+                      document.getElementById('fivestar').style.color='grey';
+                      document.getElementById('myrating').value='3';
+
+                    }
+                    function fourstar()
+                    {
+                      document.getElementById('onestar').style.color='orange';
+                      document.getElementById('twostar').style.color='orange';
+                      document.getElementById('threestar').style.color='orange';
+                      document.getElementById('fourstar').style.color='orange';
+                      document.getElementById('fivestar').style.color='grey';
+                      document.getElementById('myrating').value='4';
+
+                    }
+                    function fivestar()
+                    {
+                      document.getElementById('onestar').style.color='orange';
+                      document.getElementById('twostar').style.color='orange';
+                      document.getElementById('threestar').style.color='orange';
+                      document.getElementById('fourstar').style.color='orange';
+                      document.getElementById('fivestar').style.color='orange';
+                      document.getElementById('myrating').value='5';
+
+                    }
+
+                  </script>
+                  <!-- Your review -->
+                  <div class="md-form md-outline">
+                    <textarea id="form76" name="suggestions"class="md-textarea form-control pr-6" rows="4"></textarea>
+                    <label for="form76">Your review</label>
+                  </div>
+                  <!-- Name -->
+                  <div class="text-right pb-2">
+                    <button type="submit" name="reviewbtn" class="btn btn-primary">Add a review</button>
+                  </div>
+                
+              
+                </div>
+              </form>
+              </div>
+            </div>
+    
+          </div>
+          <!-- Classic tabs -->
+    
+          <hr>
+
+          <a href="/negotiate/{{product.product_number}}"><img title="Make us an offer"style="right:30px;border-radius:50%;bottom:10px;position:fixed;z-index:5000"width="200px"height="200px"src="{% static 'images/chatboat.gif'%}"/></a>
+          {%if botchat == "No"%}
+          <div class="containers" id="chatbots" style="display:none;">
+            {%else %}
+            <div class="containers" id="chatbots">
+            {%endif%}
+            <div class="chat_box">
+              <div class="head">
+                <div class="user">
+                  
+                  <div class="name">Negotiate with the Chatbot</div>
+                  <button type="button" style="margin-left:200px;outline:none;"class="close" onclick="closebox();" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                
+              </div>
+             
+              <div class="body"id="mybot">
+               
+                {%for chmsg in chatmsg %}
+                {%if chmsg.sender|stringformat:'s' == "chatbot" and chmsg.receiver|stringformat:'s' == email|stringformat:'s' or chmsg.sender|stringformat:'s' == email|stringformat:'s' and chmsg.receiver|stringformat:'s' == "chatbot" %}
+                {% if chmsg.sender|stringformat:'s' == "chatbot"%}
+                
+    
+                  <div class="incoming">
+                  <div class="bubble">
+                    <p>{{chmsg.message}}</p>
+                   
+                  </div>
+                  
+                </div>
+              
+                 
+              
+                
+               {%else%}
+                <div class="outgoing">
+                  <div class="bubble lower">
+                    <p>{{chmsg.message}}</p>
+                  </div>
+                  
+                </div>
+               
+                {%endif%}
+                {%endif%}
+                {%endfor%}
+                {%if textstatus|stringformat:'s' == "yes"%}
+                <center> <form style="border:1px solid black;"role="form" id="price_quote" action="" method="POST">
+                  {% csrf_token %}
+                  <input type="number" min="1" inputmode="numeric" name="price" autocomplete="off"style="background:transparent;border:1px solid grey;"required><br>
+                  <input type="submit"name="makeanoffer" value="Make an offer">
+                </form></center>
+                {%endif%}
+                {%if approval|stringformat:'s' == "yes"%}
+                <center> <form style="border:1px solid black;"role="form" id="approval_form" action="" method="POST">
+                  {% csrf_token %}
+                  <input type="submit" name="no" value="Disagree"><input type="submit"name="approve" value="Accept offer & Add to Cart"> 
+                </form></center>
+                {%endif%}
+                {%if gotocart|stringformat:'s' == "yes"%}
+                <center> <form style="border:1px solid black;"role="form" id="gocart" action="" method="POST">
+                  {% csrf_token %}
+                  <input type="submit" name="gotcart" value="Go to cart">
+                </form></center>
+                {%endif%}
+              </div>
+              
+            </div>
+          </div>
+          <script>
+            document.getElementById('mybot').scrollTop = document.getElementById('mybot').scrollHeight;
+             </script>
+    
+
+    
+          <!--Section: Block Content-->
+          <section class="text-center">
+            {%if prcatd1 > 0 %}
+            <h4 class="text-center my-5"><strong>You might also be interested in</strong></h4>
+    
+            {%if prcatd1 > 4 %}
+            <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+              <!--Controls-->
+              <div class="controls-top">
+                <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fas fa-chevron-left"></i></a>
+                <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fas fa-chevron-right"></i></a>
+              </div>
+              <!--/.Controls-->
+            
+              <!--Indicators-->
+              <ol class="carousel-indicators">
+                <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+                <li data-target="#multi-item-example" data-slide-to="1"></li>
+                
+              </ol>
+              <!--/.Indicators-->
+              {%endif%}
+            
+              <!--Slides-->
+              <div class="carousel-inner" role="listbox">
+            
+                <!--First slide-->
+                
+                
+                <div class="carousel-item active">
+                  
+                
+                {%for pro in prcat %}
+                {%for ins in proddu%}
+                {%if pro.product_number|stringformat:'s' == ins.product_number|stringformat:'s'%}
+                  <div class="col-md-3" style="float:left">
+                   <div class="card mb-2">
+                      <img class="card-img-top"
+                        src="{{pro.product_image.url}}" height="200px;"alt="">
+                      <div class="card-body">
+                        <h6 class="card-title">{{pro.product_name|truncatechars:20}}</h6>
+                        <p class="card-text"><b>Price:&#8377;<script>var a="{{pro.product_price}}"; var b="{{ins.discount}}";  var c=parseInt(a-(a*b/100)); document.write(new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 5 }).format(c));</script>  <span style="color:grey;"><strike>&#8377;{{pro.product_price|intcomma}}</strike></span> <span style="color:darkgreen;font-size:14px;">{{ins.discount}}% off</span></b></p>
+          
+                      </div>
+                    </div>
+                  </div>
+                  {%endif%}
+                  {%endfor%}
+              {%endfor%}
+                </div>
+                <!--/.First slide-->
+              
+                
+                <!--Second slide-->
+                <div class="carousel-item">
+                  
+                  {%for pro1 in prcat1 %}
+                  {%for ins1 in proddu%}
+                  {%if pro1.product_number|stringformat:'s' == ins1.product_number|stringformat:'s'%}
+                  <div class="col-md-3" style="float:left">
+                    <div class="card mb-2">
+                      <img class="card-img-top"
+                        src="{{pro1.product_image.url}}" height="200px;" alt="">
+                      <div class="card-body">
+                        <h6 class="card-title">{{pro1.product_name|truncatechars:20}}</h6>
+                        <p class="card-text"><b>Price:&#8377;<script>var a="{{pro1.product_price}}"; var b="{{ins1.discount}}";  var c=parseInt(a-(a*b/100)); document.write(new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 5 }).format(c));</script>  <span style="color:grey;"><strike>&#8377;{{pro1.product_price|intcomma}}</strike></span> <span style="color:darkgreen;font-size:14px;">{{ins1.discount}}% off</span></b></p>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {%endif%}
+                  {%endfor%}
+                  {%endfor%}
+                </div>
+                <!--/.Second slide-->
+               
+              </div>
+              <!--/.Slides-->
+            
+            </div>
+            {%endif%}
+           
+            {%if prcatd2 > 0 %}
+            <h4 class="text-center my-5"><strong>My Brands</strong></h4>
+     
+            {%if prcatd2 > 4%}
+            <div id="multi-item-example1" class="carousel slide carousel-multi-item" data-ride="carousel">
+            
+              <!--Controls-->
+              <div class="controls-top">
+                <a class="btn-floating" href="#multi-item-example1" data-slide="prev"><i class="fas fa-chevron-left"></i></a>
+                <a class="btn-floating" href="#multi-item-example1" data-slide="next"><i class="fas fa-chevron-right"></i></a>
+              </div>
+              <!--/.Controls-->
+            
+              <!--Indicators-->
+              <ol class="carousel-indicators">
+                <li data-target="#multi-item-example1" data-slide-to="0" class="active"></li>
+                <li data-target="#multi-item-example1" data-slide-to="1"></li>
+                
+              </ol>
+              <!--/.Indicators-->
+              {%endif%}
+            
+              <!--Slides-->
+              <div class="carousel-inner" role="listbox">
+            
+                <!--First slide-->
+                
+                
+                <div class="carousel-item active">
+                  
+                
+                {%for pro2 in prcat2 %}
+                {%for ins2 in proddu%}
+                {%if pro2.product_number|stringformat:'s' == ins2.product_number|stringformat:'s'%}
+                  <div class="col-md-3" style="float:left">
+                   <div class="card mb-2">
+                      <img class="card-img-top"
+                        src="{{pro2.product_image.url}}"  height="200px;"alt="">
+                      <div class="card-body">
+                        <h6 class="card-title">{{pro2.product_name|truncatechars:20}}</h6>
+                        <p class="card-text"><b>Price:&#8377;<script>var a="{{pro2.product_price}}"; var b="{{ins2.discount}}";  var c=parseInt(a-(a*b/100)); document.write(new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 5 }).format(c));</script>  <span style="color:grey;"><strike>&#8377;{{pro2.product_price|intcomma}}</strike></span> <span style="color:darkgreen;font-size:14px;">{{ins2.discount}}% off</span></b></p>
+          
+                      </div>
+                    </div>
+                  </div>
+                  {%endif%}
+                  {%endfor%}
+              {%endfor%}
+                </div>
+                <!--/.First slide-->
+              
+                
+                <!--Second slide-->
+                <div class="carousel-item">
+                  
+                  {%for pro3 in prcat3 %}
+                  {%for ins3 in proddu%}
+                  {%if pro3.product_number|stringformat:'s' == ins3.product_number|stringformat:'s'%}
+                  <div class="col-md-3" style="float:left">
+                    <div class="card mb-2">
+                      <img class="card-img-top"
+                        src="{{pro3.product_image.url}}" height="200px;" alt="">
+                      <div class="card-body">
+                        <h6 class="card-title">{{pro3.product_name|truncatechars:20}}</h6>
+                        <p class="card-text"><b>Price:&#8377;<script>var a="{{pro3.product_price}}"; var b="{{ins3.discount}}";  var c=parseInt(a-(a*b/100)); document.write(new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 5 }).format(c));</script>  <span style="color:grey;"><strike>&#8377;{{pro3.product_price|intcomma}}</strike></span> <span style="color:darkgreen;font-size:14px;">{{ins3.discount}}% off</span></b></p>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {%endif%}
+                  {%endfor%}
+                  {%endfor%}
+                </div>
+                <!--/.Second slide-->
+               
+              </div>
+              <!--/.Slides-->
+            
+            </div>
+            {%endif%}
+
+            {%if interestind1 > 0 %}
+
+            <h4 class="text-center my-5"><strong>Frequently Brought Together </strong></h4>
+    
+            {%if interestind1 > 4 %}
+            <div id="multi-item-example2" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+              <!--Controls-->
+              <div class="controls-top">
+                <a class="btn-floating" href="#multi-item-example2" data-slide="prev"><i class="fas fa-chevron-left"></i></a>
+                <a class="btn-floating" href="#multi-item-example2" data-slide="next"><i class="fas fa-chevron-right"></i></a>
+              </div>
+              <!--/.Controls-->
+            
+              <!--Indicators-->
+              <ol class="carousel-indicators">
+                <li data-target="#multi-item-example2" data-slide-to="0" class="active"></li>
+                <li data-target="#multi-item-example2" data-slide-to="1"></li>
+                
+              </ol>
+              <!--/.Indicators-->
+            {%endif%}
+              <!--Slides-->
+              <div class="carousel-inner" role="listbox">
+            
+                <!--First slide-->
+                
+                
+                <div class="carousel-item active">
+                  
+                
+                {%for intr in interestin3%}
+                {%for ins4 in proddu%}
+                {%if intr.product_number|stringformat:'s' == ins4.product_number|stringformat:'s'%}
+                  <div class="col-md-3" style="float:left">
+                   <div class="card mb-2">
+                      <img class="card-img-top"
+                        src="{{intr.product_image.url}}" height="200px;"alt="">
+                      <div class="card-body">
+                        <h6 class="card-title">{{intr.product_name|truncatechars:20}}</h6>
+                        <p class="card-text"><b>Price:&#8377;<script>var a="{{intr.product_price}}"; var b="{{ins4.discount}}";  var c=parseInt(a-(a*b/100)); document.write(new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 5 }).format(c));</script>  <span style="color:grey;"><strike>&#8377;{{intr.product_price|intcomma}}</strike></span> <span style="color:darkgreen;font-size:14px;">{{ins4.discount}}% off</span></b></p>
+          
+                      </div>
+                    </div>
+                  </div>
+                  {%endif%}
+                  {%endfor%}
+              {%endfor%}
+                </div>
+                <!--/.First slide-->
+              
+                
+                <!--Second slide-->
+                <div class="carousel-item">
+                  
+                  {%for intr1 in interestin4 %}
+                  {%for ins5 in proddu%}
+                  {%if intr1.product_number|stringformat:'s' == ins5.product_number|stringformat:'s'%}
+                  <div class="col-md-3" style="float:left">
+                    <div class="card mb-2">
+                      <img class="card-img-top"
+                        src="{{intr1.product_image.url}}" height="200px;" alt="">
+                      <div class="card-body">
+                        <h6 class="card-title">{{intr1.product_name|truncatechars:20}}</h6>
+                        <p class="card-text"><b>Price:&#8377;<script>var a="{{intr1.product_price}}"; var b="{{ins5.discount}}";  var c=parseInt(a-(a*b/100)); document.write(new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 5 }).format(c));</script>  <span style="color:grey;"><strike>&#8377;{{intr1.product_price|intcomma}}</strike></span> <span style="color:darkgreen;font-size:14px;">{{ins5.discount}}% off</span></b></p>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {%endif%}
+                  {%endfor%}
+                  {%endfor%}
+                </div>
+                <!--/.Second slide-->
+               
+              </div>
+              <!--/.Slides-->
+            
+            </div>
+
+{%endif%}
+
+
+          </section>
+          <!--Section: Block Content-->
+    
+        </div>
+      </main>
+      <script>
+        $(document).ready(function () {
+          // MDB Lightbox Init
+          $(function () {
+            $("#mdb-lightbox-ui").load("../../../mdb-addons/mdb-lightbox-ui.html");
+          });
+        });
+      </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- info section -->
+ <section class="info_section " style="margin-top: 50px;width:100% !important;background:#3a4468;">
+    <div class="container"style="width:100% !important;background:#3a4468;">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="info_contact">
+            <h5>
+              <a href="" class="navbar-brand">
+                <span>
+                  Minics
+                </span>
+              </a>
+            </h5>
+            <p>
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              Address
+            </p>
+            <p>
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              +01 1234567890
+            </p>
+            <p>
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              demo@gmail.com
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_info">
+            <h5>
+              Information
+            </h5>
+            <p>
+              Eligendi sunt, provident, debitis nemo, facilis cupiditate velit libero dolorum aperiam enim nulla iste maxime corrupti ad illo libero minus.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_links">
+            <h5>
+              Useful Link
+            </h5>
+            <ul>
+              <li>
+                <a href="index.html">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="about.html">
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="product.html">
+                  Products
+                </a>
+              </li>
+              <li>
+                <a href="why.html">
+                  Why Us
+                </a>
+              </li>
+              <li>
+                <a href="testimonial.html">
+                  Testimonial
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_form ">
+            <h5>
+              Newsletter
+            </h5>
+            <form action="">
+              <input type="email" placeholder="Enter your email">
+              <button>
+                Subscribe
+              </button>
+            </form>
+            <div class="social_box">
+              <a href="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-youtube" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end info_section -->
+
+
+ 
+<footer class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="https://html.design/">Free Html Templates</a>
+      </p>
+    </div>
+  </footer>
+ 
+  <!-- footer section -->
+
+  <!-- jQery -->
+ 
+  <!-- bootstrap js -->
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+  <!-- custom js -->
+  <script src="{% static 'js/custom.js' %}"></script>
+ 
+  <script type="text/javascript" src="https://mdbootstrap.com/previews/ecommerce-demo/js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="https://mdbootstrap.com/previews/ecommerce-demo/js/mdb.min.js"></script>
+    <!-- MDB Ecommerce JavaScript -->
+    <script type="text/javascript" src="https://mdbootstrap.com/previews/ecommerce-demo/js/mdb.ecommerce.min.js"></script>
+</body>
+
+</html>
